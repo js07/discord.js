@@ -1,5 +1,5 @@
 {
-  "name": "discord.js",
+  "name": "@js07/discord.js",
   "version": "12.5.3",
   "description": "A powerful library for interacting with the Discord API",
   "main": "./src/index",
@@ -159,5 +159,9 @@
     "trailingComma": "all",
     "endOfLine": "lf",
     "arrowParens": "avoid"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   }
 }
