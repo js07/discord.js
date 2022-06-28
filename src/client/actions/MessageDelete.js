@@ -9,6 +9,12 @@ class MessageDeleteAction extends Action {
     const channel = this.getChannel(data);
     let message;
     if (channel) {
+      // Fixes crashing when client receives a MessageDelete event for a
+      // non-text channel
+      if (!('messages' in channel)) {
+        return {};
+      }
+
       message = this.getMessage(data, channel);
       if (message) {
         channel.messages.cache.delete(message.id);
